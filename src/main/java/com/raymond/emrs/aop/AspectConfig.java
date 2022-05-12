@@ -20,7 +20,7 @@ public class AspectConfig {
      * Exception Handling
      */
 
-    @Before(value = "execution(* com.raymond.emrs.controller.*.delete(..))")
+    @Before(value = "execution(* com.raymond.emrs.controllers.*.delete(..))")
     public void logBeforeDeleteAndUpdate(JoinPoint joinPoint) {
         log.info("Executing {}", joinPoint);
     }

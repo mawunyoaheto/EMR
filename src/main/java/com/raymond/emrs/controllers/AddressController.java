@@ -1,4 +1,4 @@
-package com.raymond.emrs.controller;
+package com.raymond.emrs.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 

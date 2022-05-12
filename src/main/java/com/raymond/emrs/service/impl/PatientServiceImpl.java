@@ -32,14 +32,14 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient getOnePatientByOpdNo(long patientOpdNo) {
-        Optional<Patient> foundPatient = Optional.ofNullable(patientRepository.getPatientByOpdNo(patientOpdNo));
-        if(foundPatient.isPresent()){
-            return foundPatient.get();
-        }else {
-            throw new ResourceNotFoundException("Patient with given opdNo not Found", HttpStatus.NOT_FOUND);
+    public Patient getPatientByOpdNo(String opdNo) {
+        Optional<Patient> foundPatient = Optional.ofNullable(patientRepository.getPatientByOpdNo(opdNo));
+        if(!foundPatient.isPresent()){
+            throw new ResourceNotFoundException("Patient not found",HttpStatus.NOT_FOUND);
         }
+        return foundPatient.get();
     }
+
 
     @Override
     public Patient addPatient(Patient patient) {

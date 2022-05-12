@@ -1,4 +1,4 @@
-package com.raymond.emrs.controller;
+package com.raymond.emrs.controllers;
 
 import com.raymond.emrs.entity.Patient;
 import com.raymond.emrs.service.PatientService;
@@ -21,6 +21,12 @@ public class PatientController {
         System.out.println(opdno);
         return new ResponseEntity<>(patientService.getPatientById(patientId), HttpStatus.OK);
     }
+
+//    @GetMapping
+//    public ResponseEntity<Patient> getOnePatient(@RequestParam String opdno){
+//        System.out.println(opdno);
+//        return new ResponseEntity<>(patientService.getPatientByOpdNo(opdno), HttpStatus.OK);
+//    }
 
     @GetMapping
     public ResponseEntity<List<Patient>>getAllPatients() {
