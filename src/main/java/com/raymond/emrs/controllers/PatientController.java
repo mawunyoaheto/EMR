@@ -17,8 +17,8 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("{patientId}")
-    public ResponseEntity<Patient> getOnePatient(@RequestParam Optional<String> opdno, @PathVariable("patientId") long patientId){
-        System.out.println(opdno);
+    public ResponseEntity<Patient> getOnePatient(@RequestParam Optional<String> opdno,
+                                                 @PathVariable("patientId") long patientId){
         return new ResponseEntity<>(patientService.getPatientById(patientId), HttpStatus.OK);
     }
 
