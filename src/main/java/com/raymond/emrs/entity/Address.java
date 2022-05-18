@@ -1,5 +1,6 @@
 package com.raymond.emrs.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +20,8 @@ public class Address {
     private String street;
     private String city;
     private String state;
-    private String zipCode;
-    @OneToOne(mappedBy = "address")
+    private int zipCode;
+    @OneToOne(mappedBy = "address", cascade=CascadeType.ALL)
+    @JsonIgnore
     private Patient patient;
 }

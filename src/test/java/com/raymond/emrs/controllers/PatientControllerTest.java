@@ -76,6 +76,7 @@ class PatientControllerTest {
     }
 
     @Test
+    @DisplayName("Test should pass when new patient is added")
     public void addPatientTest() throws Exception {
         /**
          * step 1: mock the data to be returned by the patient service class

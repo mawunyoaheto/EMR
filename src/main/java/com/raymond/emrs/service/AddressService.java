@@ -4,5 +4,7 @@ import com.raymond.emrs.entity.Address;
 
 public interface AddressService {
 
-    public Address addPatientAddress(long patientId);
+    public Address addPatientAddress(long patientId, Address address);
+    public Address getOneAddress(long patientId, long addressId);
+    public void deleteOneAddress(long patientId, long addressId);
 }

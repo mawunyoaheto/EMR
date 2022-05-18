@@ -1,5 +1,6 @@
 package com.raymond.emrs.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,7 +28,8 @@ public class Patient {
     private Status status;
     private double outstandingBalance;
     private Archived archived;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Address address;
 
     public Patient(String opdNo, String firstName, String otherName, String surname, Gender gender,LocalDate dateOfBirth, String phoneNumber, Status status, double outstandingBalance) {
