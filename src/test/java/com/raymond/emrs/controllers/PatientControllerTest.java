@@ -6,7 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.raymond.emrs.entity.Archived;
 import com.raymond.emrs.entity.Gender;
 import com.raymond.emrs.entity.Patient;
-import com.raymond.emrs.entity.Status;
+import com.raymond.emrs.entity.PatientStatus;
 import com.raymond.emrs.service.PatientService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -54,7 +54,7 @@ class PatientControllerTest {
         mockPatient.setGender(Gender.MALE);
         mockPatient.setPhoneNumber("641-234-5645");
         mockPatient.setArchived(Archived.NO);
-        mockPatient.setStatus(Status.OUT);
+        mockPatient.setStatus(PatientStatus.OUT);
 
         when(patientService.getPatientById(anyLong())).thenReturn(mockPatient);
 
@@ -90,7 +90,7 @@ class PatientControllerTest {
         mockPatient.setGender(Gender.MALE);
         mockPatient.setPhoneNumber("641-312-8484");
         mockPatient.setArchived(Archived.NO);
-        mockPatient.setStatus(Status.OUT);
+        mockPatient.setStatus(PatientStatus.OUT);
 
         when(patientService.addPatient(any(Patient.class))).thenReturn(mockPatient);
         /**

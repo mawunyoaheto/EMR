@@ -25,14 +25,15 @@ public class Patient {
     private Gender gender;
     private LocalDate dateOfBirth;
     private String phoneNumber;
-    private Status status;
+    private PatientStatus status;
     private double outstandingBalance;
     private Archived archived;
     @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     private Address address;
 
-    public Patient(String opdNo, String firstName, String otherName, String surname, Gender gender,LocalDate dateOfBirth, String phoneNumber, Status status, double outstandingBalance) {
+    public Patient(String opdNo, String firstName, String otherName, String surname, Gender gender,
+                   LocalDate dateOfBirth, String phoneNumber, PatientStatus status, double outstandingBalance) {
         this.opdNo = opdNo;
         this.firstName = firstName;
         this.otherName = otherName;
