@@ -32,6 +32,7 @@ public class Patient {
     @JsonIgnore
     private Address address;
 
+
     public Patient(String opdNo, String firstName, String otherName, String surname, Gender gender,
                    LocalDate dateOfBirth, String phoneNumber, PatientStatus status, double outstandingBalance) {
         this.opdNo = opdNo;
